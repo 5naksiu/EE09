@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Wędkujemy</title>
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <style>
@@ -36,6 +36,15 @@
     </style>
 </head>
 <body style="font-family: Verdana;">
+    <?php
+        $db = new mysqli('localhost',
+                        'root',
+                        '',
+                        'wedkowanie')
+        $sql = "SELECT nazwa, wystepowanie FROM 'ryby'
+                        where styl-zycia = 1";
+        wynik = $db >querry
+    ?>
     <div id=upper>
         <h1><b>Portal dla wędkarzy</b></h1>
     </div>
@@ -53,11 +62,11 @@
         <img style="padding: 5px; margin: 10px; border: 1px solid;" src="https://4.bp.blogspot.com/-Rp_mnnLIiSk/XZFfXCku9_I/AAAAAAAAEAI/nKebrMZc_AYGur8QQ-uOWKXRwyjM19vZwCLcBGAsYHQ/s1600/ryba1.jpg">
     </div>
     <div style=" background-color: #40E0D0; text-align: center;">
-        <a href="url">Pobierz kwerendy</a>
+        <a href="kwerendy.txt">Pobierz kwerendy</a>
     </div>
     <div id=bottom>
        <br>
-       <p style="text-align: center; color: white;">Stronę wykonał: Kewin</p><br>
+       <p style="text-align: center; color: white;">Stronę wykonał: 02212400472</p><br>
     </div>
 </body>
 </html>
