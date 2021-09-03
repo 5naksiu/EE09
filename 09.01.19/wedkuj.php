@@ -36,26 +36,25 @@
     </style>
 </head>
 <body style="font-family: Verdana;">
-    <?php
-        $db = new mysqli('localhost',
-                        'root',
-                        '',
-                        'wedkowanie')
-        $sql = "SELECT nazwa, wystepowanie FROM 'ryby'
-                        where styl-zycia = 1";
-        wynik = $db >querry
-    ?>
+
     <div id=upper>
         <h1><b>Portal dla wędkarzy</b></h1>
     </div>
     <div id=left>
         <h3><b>Ryby drapieżne naszych wód</b></h3>
         <ul>
-            <li>Szczupak, występowanie: stawy, rzeki</li>
-            <li>Sandacz, występowanie: stawy, jeziora, rzeki</li>
-            <li>Okon, występowanie: rzeki</li>
-            <li>Sum, występowanie: jeziora, rzeki</li>
-            <li>Dorsz, występownie: morza oceany</li>
+        <?php
+        $db = new mysqli('localhost', 'root', '', 'wedkowanie');
+        $sql = "SELECT nazwa, wystepowanie FROM `ryby` where styl_zycia = 1";
+        $wynik = $db->query($sql);
+        while($wiersz = $wynik->fetch_assoc()) {
+            $nazwa = $wiersz['nazwa'];
+            $wystepowanie = $wiersz['wystepowanie'];
+            echo "<li>$nazwa, wystepowanie: $wystepowanie</li>";
+        }
+        $db->close();
+        ?>
+
         </ul>
     </div>
     <div id=right>
